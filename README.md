@@ -24,40 +24,7 @@ This project is part of the course **Z5007: Programming and Data Structures**
 - WCSS (Inertia) computation
 - Benchmarking against scikit-learn
 
----
-## 📁 Project Structure
-high-performance-kmeans/
--│
--├── src/
--│ └── kmeans/
--│ ├── distance.py
--│ ├── min_heap.py
--│ ├── hash_table.py
--│ ├── kmeans_plus_plus.py
--│ ├── kmeans.py
--│ └── utils.py
--│
--├── benchmarks/
--│ ├── compare_distance.py
--│ ├── demo_min_heap.py
--│ ├── demo_kmeans_plus_plus.py
--│ ├── demo_kmeans.py
--│ ├── demo_elbow.py
--│ └── final_real_data.py
--│
--├── tests/
--│ ├── test_distance.py
--│ ├── test_min_heap.py
--│ ├── test_hash_table.py
--│ ├── test_kmeans_plus_plus.py
--│ └── test_kmeans.py
--│
--├── data/
--│ └── sample_data.csv (optional small sample)
--│
--├── README.md
--└── requirements.txt
-----
+
 
 ## ⚙️ Requirements
 
@@ -111,5 +78,6 @@ pytest tests/
 Munusamy M
 M.Tech Data Science & Artificial Intelligence
 IIT Madras Zanzibar
+
 
 
