@@ -34,51 +34,51 @@ This project demonstrates how careful algorithm design and data structure integr
 
 # ✔ Key Features
 
-Vectorized Squared Euclidean Distance
----
-Difference-based formulation (baseline)
+1️⃣Vectorized Squared Euclidean Distance
 
-Expansion-based formulation
+  ⭐Difference-based formulation (baseline)
 
-∥𝑥−𝑐∥2=∥𝑥∥2+∥𝑐∥2−2𝑥⋅𝑐∥x−c∥2=∥x∥2+∥c∥2−2x⋅c
----
+  ⭐Expansion-based formulation
+
+  ∥𝑥−𝑐∥2=∥𝑥∥2+∥𝑐∥2−2𝑥⋅𝑐∥x−c∥2=∥x∥2+∥c∥2−2x⋅c
+
 Final implementation uses the expansion approach for better performance
 
-# Custom Data Structures (Built from Scratch)
+2️⃣Custom Data Structures (Built from Scratch)
 
-Binary Min-Heap (array-based)
+⭐Binary Min-Heap (array-based)
 
-Hash Table with linear probing
+⭐Hash Table with linear probing
 
-# K-Means++ Initialization
+3️⃣K-Means++ Initialization
 
-Improved centroid initialization
+⭐Improved centroid initialization
 
-Faster convergence
+⭐Faster convergence
 
-Reduced sensitivity to poor local minima
+⭐Reduced sensitivity to poor local minima
 
-# Full K-Means (Lloyd’s Algorithm)
+4️⃣Full K-Means (Lloyd’s Algorithm)
 
-Vectorized assignment step
+⭐Vectorized assignment step
 
-Efficient centroid update
+⭐Efficient centroid update
 
-Convergence detection using numerical tolerance
+⭐Convergence detection using numerical tolerance
 
-# Robust Edge Case Handling
+5️⃣Robust Edge Case Handling
 
-Empty clusters handled using cached distances and Min-Heap
+⭐Empty clusters handled using cached distances and Min-Heap
 
-Deterministic behavior via fixed random seed
+⭐Deterministic behavior via fixed random seed
 
-# Evaluation & Analysis
+6️⃣Evaluation & Analysis
 
-WCSS (Within-Cluster Sum of Squares)
+⭐WCSS (Within-Cluster Sum of Squares)
 
-Elbow Method for optimal K selection
+⭐Elbow Method for optimal K selection
 
-Fair benchmarking against scikit-learn (n_init = 1)
+⭐Fair benchmarking against scikit-learn (n_init = 1)
 
 ---
 # 🧠 Design Philosophy
@@ -114,27 +114,27 @@ pip install -r requirements.txt
 # ▶️ How to Run (Demonstrations)
 
 1️⃣ Vectorized Distance Benchmark
--
+
 python benchmarks/compare_distance.py
 
 2️⃣ Min-Heap Demonstration
--
+
 python benchmarks/demo_min_heap.py
 
 3️⃣ K-Means++ Initialization
--
+
 python benchmarks/demo_kmeans_plus_plus.py
 
 4️⃣ Full K-Means Algorithm
--
+
 python benchmarks/demo_kmeans.py
 
 5️⃣ Elbow Method
--
+
 python benchmarks/demo_elbow.py
 
 6️⃣ Full Demo on Real Dataset
--
+
 python benchmarks/final_real_data.py
 
 ---
@@ -191,4 +191,5 @@ IIT Madras Zanzibar
 # ✅ Final Remark
 
 This project demonstrates that efficient clustering algorithms can be implemented from scratch using sound programming practices, appropriate data structures, and numerical optimization techniques—achieving performance comparable to established libraries.
+
 
