@@ -1,7 +1,6 @@
 # benchmarks/final_demo_real_data.py
 
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import time
 
