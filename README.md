@@ -1,83 +1,220 @@
-# High Performance K-Means Clustering (From Scratch)
+# 📘 High-Performance K-Means Clustering (From Scratch)
 
-This repository contains a high-performance implementation of the K-Means clustering
-algorithm built entirely from scratch using Python and NumPy, without relying on
-external machine learning libraries for the core algorithm.
+A high-performance, from-scratch implementation of the K-Means clustering algorithm using Python and NumPy, developed as part of the Programming and Data Structures (Z5007) course.
 
-This project is part of the course **Z5007: Programming and Data Structures**
-(M.Tech Data Science & Artificial Intelligence, IIT Madras Zanzibar).
+This project emphasizes:
+
+algorithmic efficiency
+
+vectorized numerical computation
+
+custom data structure design
+
+fair benchmarking against standard libraries
+
+No external machine learning libraries are used for the core algorithm.
 
 ---
+# 🎓 Academic Context
 
-## 📌 Features Implemented
+Course: Z5007 – Programming and Data Structures
 
-- Vectorized squared Euclidean distance computation
-  - Difference-based formulation
-  - Expansion-based formulation (final choice)
-- Custom data structures
-  - Binary Min-Heap (array-based)
-  - Hash Table with linear probing
-- K-Means++ initialization (from scratch)
-- Full K-Means clustering (Lloyd’s Algorithm)
-- Robust empty-cluster handling using cached distances + Min-Heap
-- Elbow Method for optimal K selection
-- WCSS (Inertia) computation
-- Benchmarking against scikit-learn
+Programme: M.Tech Data Science & Artificial Intelligence
 
+Institution: IIT Madras Zanzibar
 
+Student: Munusamy M
 
-## ⚙️ Requirements
+Roll Number: ZDA25M011
 
-- Python 3.9+
-- numpy
-- pandas
-- matplotlib
-- scikit-learn (used **only** for benchmarking)
+---
+# 🚀 Project Highlights
 
-Install dependencies:
-```bash
+This project demonstrates how careful algorithm design and data structure integration can yield a competitive K-Means implementation without relying on black-box libraries.
+
+# ✔ Key Features
+
+Vectorized Squared Euclidean Distance
+
+Difference-based formulation (baseline)
+
+Expansion-based formulation
+
+# ∥𝑥−𝑐∥2=∥𝑥∥2+∥𝑐∥2−2𝑥⋅𝑐∥x−c∥2=∥x∥2+∥c∥2−2x⋅c
+
+Final implementation uses the expansion approach for better performance
+
+Custom Data Structures (Built from Scratch)
+
+Binary Min-Heap (array-based)
+
+Hash Table with linear probing
+
+K-Means++ Initialization
+
+Improved centroid initialization
+
+Faster convergence
+
+Reduced sensitivity to poor local minima
+
+Full K-Means (Lloyd’s Algorithm)
+
+Vectorized assignment step
+
+Efficient centroid update
+
+Convergence detection using numerical tolerance
+
+Robust Edge Case Handling
+
+Empty clusters handled using cached distances and Min-Heap
+
+Deterministic behavior via fixed random seed
+
+Evaluation & Analysis
+
+WCSS (Within-Cluster Sum of Squares)
+
+Elbow Method for optimal K selection
+
+Fair benchmarking against scikit-learn (n_init = 1)
+
+---
+# 🧠 Design Philosophy
+
+Performance first: avoid Python loops in critical paths
+
+Transparency: every component is implemented and explainable
+
+Modularity: clean separation between algorithms and data structures
+
+Fair comparison: identical experimental conditions for benchmarking
+
+---
+# 📂 Project Structure
+high-performance-kmeans/
+│
+├── src/
+│   └── kmeans/
+│       ├── distance.py            # Vectorized distance computation
+│       ├── min_heap.py            # Custom binary min-heap
+│       ├── hash_table.py          # Custom hash table
+│       ├── kmeans_plus_plus.py    # K-Means++ initialization
+│       ├── kmeans.py              # Full K-Means algorithm
+│       └── utils.py               # WCSS and Elbow Method
+│
+├── benchmarks/
+│   ├── compare_distance.py
+│   ├── demo_min_heap.py
+│   ├── demo_kmeans_plus_plus.py
+│   ├── demo_kmeans.py
+│   ├── demo_elbow.py
+│   └── final_real_data.py
+│
+├── tests/
+│   ├── test_distance.py
+│   ├── test_min_heap.py
+│   ├── test_hash_table.py
+│   ├── test_kmeans_plus_plus.py
+│   └── test_kmeans.py
+│
+├── data/
+│   └── sample_data.csv   # Small sample or dataset link
+│
+├── requirements.txt
+└── README.md
+
+---
+# ⚙️ Requirements
+
+Python 3.9+
+
+numpy
+
+pandas
+
+matplotlib
+
+scikit-learn
+(used only for benchmarking, not for core implementation)
+
+---
+# Install dependencies
 pip install -r requirements.txt
 
-▶️ How to Run (Milestone-2 Demo)
-1. Vectorized Distance Benchmark
+---
+# ▶️ How to Run (Demonstrations)
+
+# 1️⃣ Vectorized Distance Benchmark
 python benchmarks/compare_distance.py
 
-2. Min-Heap Demo
+# 2️⃣ Min-Heap Demonstration
 python benchmarks/demo_min_heap.py
 
-3. K-Means++ Demo
+# 3️⃣ K-Means++ Initialization
 python benchmarks/demo_kmeans_plus_plus.py
 
-4. Full K-Means Demo
+# 4️⃣ Full K-Means Algorithm
 python benchmarks/demo_kmeans.py
 
-5. Elbow Method
+# 5️⃣ Elbow Method
 python benchmarks/demo_elbow.py
 
-6. Full Demo on Real Dataset
+# 6️⃣ Full Demo on Real Dataset
 python benchmarks/final_real_data.py
 
 ---
-📊 Sample Results (Real Dataset)
+# 📊 Sample Results (Real Dataset)
 
-Dataset size: ~20,000 samples
+Dataset size: ~20,433 samples, 8 numerical features
 
 WCSS error vs scikit-learn: ~1.4%
 
-Runtime ratio (Custom / sklearn): ~0.27
+Runtime ratio (Custom / scikit-learn): ~0.27
+
+Benchmarking performed under identical conditions with n_init = 1 for fairness.
+
 ---
-🧪 Testing
+# 🧪 Testing
 
-Run all unit tests:
+Comprehensive unit tests are provided for:
 
+distance computation
+
+Min-Heap
+
+Hash Table
+
+K-Means++
+
+K-Means algorithm
+
+Run all tests:
 pytest tests/
----
 
-👤 Author
+---
+# 📌 Notes
+
+The Min-Heap is not used for nearest-centroid search
+(assignment is fully vectorized using argmin)
+
+The Min-Heap is used in:
+
+K-Means++ initialization
+
+Empty-cluster recovery
+
+Hash Table is used for efficient WCSS storage during Elbow Method
+
+---
+# 👤 Author
 
 Munusamy M
 M.Tech Data Science & Artificial Intelligence
 IIT Madras Zanzibar
 
+---
+# ✅ Final Remark
 
-
+This project demonstrates that efficient clustering algorithms can be implemented from scratch using sound programming practices, appropriate data structures, and numerical optimization techniques—achieving performance comparable to established libraries.
