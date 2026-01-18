@@ -35,22 +35,22 @@ This project demonstrates how careful algorithm design and data structure integr
 # ✔ Key Features
 
 Vectorized Squared Euclidean Distance
-
+---
 Difference-based formulation (baseline)
 
 Expansion-based formulation
 
-# ∥𝑥−𝑐∥2=∥𝑥∥2+∥𝑐∥2−2𝑥⋅𝑐∥x−c∥2=∥x∥2+∥c∥2−2x⋅c
-
+∥𝑥−𝑐∥2=∥𝑥∥2+∥𝑐∥2−2𝑥⋅𝑐∥x−c∥2=∥x∥2+∥c∥2−2x⋅c
+---
 Final implementation uses the expansion approach for better performance
 
-Custom Data Structures (Built from Scratch)
+# Custom Data Structures (Built from Scratch)
 
 Binary Min-Heap (array-based)
 
 Hash Table with linear probing
 
-K-Means++ Initialization
+# K-Means++ Initialization
 
 Improved centroid initialization
 
@@ -58,7 +58,7 @@ Faster convergence
 
 Reduced sensitivity to poor local minima
 
-Full K-Means (Lloyd’s Algorithm)
+# Full K-Means (Lloyd’s Algorithm)
 
 Vectorized assignment step
 
@@ -66,13 +66,13 @@ Efficient centroid update
 
 Convergence detection using numerical tolerance
 
-Robust Edge Case Handling
+# Robust Edge Case Handling
 
 Empty clusters handled using cached distances and Min-Heap
 
 Deterministic behavior via fixed random seed
 
-Evaluation & Analysis
+# Evaluation & Analysis
 
 WCSS (Within-Cluster Sum of Squares)
 
@@ -92,40 +92,7 @@ Modularity: clean separation between algorithms and data structures
 Fair comparison: identical experimental conditions for benchmarking
 
 ---
-# 📂 Project Structure
-high-performance-kmeans/
-│
-├── src/
-│   └── kmeans/
-│       ├── distance.py            # Vectorized distance computation
-│       ├── min_heap.py            # Custom binary min-heap
-│       ├── hash_table.py          # Custom hash table
-│       ├── kmeans_plus_plus.py    # K-Means++ initialization
-│       ├── kmeans.py              # Full K-Means algorithm
-│       └── utils.py               # WCSS and Elbow Method
-│
-├── benchmarks/
-│   ├── compare_distance.py
-│   ├── demo_min_heap.py
-│   ├── demo_kmeans_plus_plus.py
-│   ├── demo_kmeans.py
-│   ├── demo_elbow.py
-│   └── final_real_data.py
-│
-├── tests/
-│   ├── test_distance.py
-│   ├── test_min_heap.py
-│   ├── test_hash_table.py
-│   ├── test_kmeans_plus_plus.py
-│   └── test_kmeans.py
-│
-├── data/
-│   └── sample_data.csv   # Small sample or dataset link
-│
-├── requirements.txt
-└── README.md
 
----
 # ⚙️ Requirements
 
 Python 3.9+
@@ -146,22 +113,28 @@ pip install -r requirements.txt
 ---
 # ▶️ How to Run (Demonstrations)
 
-# 1️⃣ Vectorized Distance Benchmark
+1️⃣ Vectorized Distance Benchmark
+-
 python benchmarks/compare_distance.py
 
-# 2️⃣ Min-Heap Demonstration
+2️⃣ Min-Heap Demonstration
+-
 python benchmarks/demo_min_heap.py
 
-# 3️⃣ K-Means++ Initialization
+3️⃣ K-Means++ Initialization
+-
 python benchmarks/demo_kmeans_plus_plus.py
 
-# 4️⃣ Full K-Means Algorithm
+4️⃣ Full K-Means Algorithm
+-
 python benchmarks/demo_kmeans.py
 
-# 5️⃣ Elbow Method
+5️⃣ Elbow Method
+-
 python benchmarks/demo_elbow.py
 
-# 6️⃣ Full Demo on Real Dataset
+6️⃣ Full Demo on Real Dataset
+-
 python benchmarks/final_real_data.py
 
 ---
@@ -218,3 +191,4 @@ IIT Madras Zanzibar
 # ✅ Final Remark
 
 This project demonstrates that efficient clustering algorithms can be implemented from scratch using sound programming practices, appropriate data structures, and numerical optimization techniques—achieving performance comparable to established libraries.
+
