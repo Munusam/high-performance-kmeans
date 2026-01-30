@@ -39,8 +39,10 @@ This project demonstrates how careful algorithm design and data structure integr
   ⭐Difference-based formulation (baseline)
 
   ⭐Expansion-based formulation
-
+  
+```
   ∥𝑥−𝑐∥2=∥𝑥∥2+∥𝑐∥2−2𝑥⋅𝑐∥x−c∥2=∥x∥2+∥c∥2−2x⋅c
+```
 
 Final implementation uses the expansion approach for better performance
 
@@ -191,5 +193,6 @@ IIT Madras Zanzibar
 # ✅ Final Remark
 
 This project demonstrates that efficient clustering algorithms can be implemented from scratch using sound programming practices, appropriate data structures, and numerical optimization techniques—achieving performance comparable to established libraries.
+
 
 
